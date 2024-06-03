@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+ </head>
+ <body>
+  <section class="lg:p-8 flex justify-center">
+        <div class="max-w-3xl">
+            <div class="flex justify-between items-center mb-28">
+                <div>
+                    <h1 class="text-2xl font-bold">INVOICE GENERATOR</h1>
+                    <p>Sample Output should be this</p>
+                </div>
+                <img src="./logo.png" alt="Logo" class="w-20 h-20" />
+            </div>
+            <div>
+                <table class="w-full border-b mb-6">
+                    <thead>
+                        <tr>
+                            <th class="border-b text-left px-10 py-2">Product Name</th>
+                            <th class="border-b px-10 py-2">Qty</th>
+                            <th class="border-b px-10 py-2">Rate</th>
+                            <th class="border-b text-right px-10 py-2">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each items}}
+                        <tr class="text-center">
+                            <td class="px-10 py-5 text-left">{{this.name}}</td>
+                            <td class="px-10 font-semibold text-blue-300 py-5">{{this.quantity}}</td>
+                            <td class="px-10 py-5">{{this.rate}}</td>
+                            <td class="px-10 py-5 text-right">{{this.total}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="space-y-5 flex flex-col max-w-xs px-10 ml-auto mb-6">
+                <div class="flex w-full justify-between">
+                    <p class="text-lg font-semibold">Total:</p>
+                    <p>INR {{totalAmount}}</p>
+                </div>
+                <div class="flex w-full justify-between">
+                    <p>GST:</p>
+                    <p>18%</p>
+                </div>
+                <div class="flex border-y-2 py-5 w-full justify-between">
+                    <p class="text-lg font-semibold">Grand Total:</p>
+                    <p class="text-blue-400 font-semibold">INR {{grandTotal}}</p>
+                </div>
+            </div>
+            <p>Valid until:1-2-1</p>
+        </div>
+    </section>
+    <footer class="mt-28 mb-10 bg-[#000] text-white text-xs w-full py-6 px-20 rounded-full">
+        <p class="py-2">Terms and Conditions</p>
+        <p class="leading-5 text-wrap">We are happy to supply any further information you may need and trust that you call on us to fill your order, which will receive our prompt and careful attention</p>
+    </footer>
+</body>
+ </body>
+</html>
