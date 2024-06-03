@@ -4,7 +4,11 @@
  "main": "server.ts",
  "license": "MIT",
  "scripts": {
-  "dev": "nodemon server.ts --dev"
+  "dev": "nodemon server.ts --dev",
+  "test_prod": "nodemon server.ts ",
+  "prod": "node dist/server.js",
+  "postinstall": "tsc",
+  "build": "tsc"
  },
  "dependencies": {
   "bcrypt": "^5.1.1",
