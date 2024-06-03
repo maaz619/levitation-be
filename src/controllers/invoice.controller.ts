@@ -47,6 +47,7 @@ async function downloadInvoice(req: Request & { user: IToken }, res: Response, n
         res.setHeader('Content-type', 'application/pdf');
 
         const browser = await puppeteer.launch({
+            executablePath: '/app/.cache/puppeteer',
             args: [
                 '--no-sandbox'
             ]
